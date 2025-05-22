@@ -44,11 +44,70 @@
         flex: 1 1 calc(33.333% - 20px);
       }
     }
+    #preloader {
+    overflow: hidden;
+    background-color: #fff;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+}
+
+#preloader .preload-icons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    z-index: 8;
+    background-color: transparent;
+    margin-top: -25px;
+    margin-left: -25px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.preload-icons > img {
+    position: absolute;
+    top: 50%;
+    margin-top: -16px;
+    left: 50%;
+    margin-left: -16px;
+}
+
+.caviar-load {
+    -webkit-animation: 6000ms linear 0s normal none infinite running caviar-load;
+    animation: 6000ms linear 0s normal none infinite running caviar-load;
+    background: transparent none repeat scroll 0 0;
+    border-color: #ebebeb #ebebeb #ff0000;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    height: 70px;
+    position: relative;
+    width: 70px;
+    z-index: 9;
+    top: 50%;
+    left: 50%;
+    margin-top: -35px;
+    margin-left: -35px;
+}
   </style>
+  <!-- <link href="style.css" rel="stylesheet"> -->
   <link rel="icon" href="img/logo/logo_serasa.png">
   <link href="css/responsive/responsive.css" rel="stylesheet">
 </head>
 <body>
+  <div id="preloader">
+        <div class="caviar-load"></div>
+        <div class="preload-icons">
+            <img class="preload-1" src="img/core-img/preload-1.png" alt="">
+            <img class="preload-2" src="img/core-img/preload-2.png" alt="">
+            <img class="preload-3" src="img/core-img/preload-3.png" alt="">
+        </div>
+    </div>
     <header style="background-color: #fff; padding: 15px 30px; border-bottom: 1px solid #eee;">
         <div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
             <img src="img/logo/logo_serasa.png" alt="Logo Serasa Catering" style="height: 60px;">
@@ -125,6 +184,18 @@
         </div>
       </div>
     </section>
+
+    
+      <!-- Jquery-2.2.4 js -->
+      <script src="js/jquery/jquery-2.2.4.min.js"></script>
+      <!-- Popper js -->
+      <script src="js/bootstrap/popper.min.js"></script>
+      <!-- Bootstrap-4 js -->
+      <script src="js/bootstrap/bootstrap.min.js"></script>
+      <!-- All Plugins js -->
+      <script src="js/others/plugins.js"></script>
+      <!-- Active JS -->
+      <script src="js/active.js"></script>
 
   <script>
     fetch('data/makanan.json')
