@@ -1,0 +1,74 @@
+[
+  {
+    "nama": "Paket Hemat 1",
+    "harga": 25000,
+    "deskripsi": "Nasi + Ayam Goreng + Sambal + Es Teh",
+    "gambar": "img/menu-img/paket-hemat1.jpg"
+  },
+  {
+    "nama": "Paket Hemat 2",
+    "harga": 27000,
+    "deskripsi": "Nasi + Ikan Bakar + Sayur Asem + Air Mineral",
+    "gambar": "img/menu-img/paket-hemat2.jpg"
+  },
+  {
+    "nama": "Paket Keluarga 1",
+    "harga": 100000,
+    "deskripsi": "Untuk 4 orang: Nasi + Ayam Bakar + Lalapan + Es Teh",
+    "gambar": "img/menu-img/paket-keluarga1.jpg"
+  },
+  {
+    "nama": "Paket Keluarga 2",
+    "harga": 120000,
+    "deskripsi": "Untuk 4 orang: Nasi + Ikan Bakar + Sayur + Minuman",
+    "gambar": "img/menu-img/paket-keluarga2.jpg"
+  },
+  {
+    "nama": "Paket Spesial Ayam",
+    "harga": 30000,
+    "deskripsi": "Nasi + Ayam Geprek + Tahu Tempe + Es Jeruk",
+    "gambar": "img/menu-img/paket-ayam.jpg"
+  },
+  {
+    "nama": "Paket Nasi Liwet",
+    "harga": 35000,
+    "deskripsi": "Nasi Liwet + Ayam Suwir + Telur + Sambal",
+    "gambar": "img/menu-img/paket-liwet.jpg"
+  },
+  {
+    "nama": "Paket Bento Jepang",
+    "harga": 45000,
+    "deskripsi": "Nasi + Chicken Katsu + Salad + Miso Soup",
+    "gambar": "img/menu-img/paket-bento.jpg"
+  },
+  {
+    "nama": "Paket Western",
+    "harga": 55000,
+    "deskripsi": "Steak Daging + Kentang + Sayur + Jus",
+    "gambar": "img/menu-img/paket-western.jpg"
+  },
+  {
+    "nama": "Paket Vegetarian",
+    "harga": 28000,
+    "deskripsi": "Nasi Merah + Tahu + Tempe + Tumis Sayur",
+    "gambar": "img/menu-img/paket-vegetarian.jpg"
+  },
+  {
+    "nama": "Paket Ulang Tahun",
+    "harga": 75000,
+    "deskripsi": "Nasi Kuning + Ayam Serundeng + Kue Ulang Tahun Mini",
+    "gambar": "img/menu-img/paket-ultah.jpg"
+  },
+  {
+    "nama": "Paket Nasi Uduk Komplit",
+    "harga": 28000,
+    "gambar": "img/menu-img/nasi-uduk.jpg",
+    "deskripsi": "Nasi uduk, telur balado, ayam goreng, sambal, dan kerupuk."
+  },
+  {
+    "nama": "Paket Nasi Kuning Tumpeng Mini",
+    "harga": 35000,
+    "gambar": "img/menu-img/nasi-kuning.jpg",
+    "deskripsi": "Nasi kuning, ayam opor, perkedel, telur pindang, dan sambal."
+  }
+]

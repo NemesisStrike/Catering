@@ -1,0 +1,77 @@
+[
+  {
+    "nama": "Nasi Goreng",
+    "harga": 15000,
+    "gambar": "img/menu-img/nasi-goreng.jpg"
+  },
+  {
+    "nama": "Ayam Geprek",
+    "harga": 18000,
+    "gambar": "img/menu-img/ayam-geprek.jpg"
+  },
+  {
+    "nama": "Soto Ayam",
+    "harga": 13000,
+    "gambar": "img/menu-img/soto-ayam.jpg"
+  },
+  {
+    "nama": "Bakso",
+    "harga": 14000,
+    "gambar": "img/menu-img/bakso.jpg"
+  },
+  {
+    "nama": "Ayam Bakar",
+    "harga": 20000,
+    "gambar": "img/menu-img/ayam-bakar.jpg"
+  },
+  {
+    "nama": "Wagyu Steak",
+    "harga": 95000,
+    "gambar": "img/menu-img/wagyu-steak.jpg"
+  },
+  {
+    "nama": "Lobster Bakar",
+    "harga": 120000,
+    "gambar": "img/menu-img/lobster-bakar.jpg"
+  },
+  {
+    "nama": "Salmon Panggang",
+    "harga": 85000,
+    "gambar": "img/menu-img/salmon-panggang.jpg"
+  },
+  {
+    "nama": "Beef Wellington",
+    "harga": 110000,
+    "gambar": "img/menu-img/beef-wellington.jpg"
+  },
+  {
+    "nama": "Nasi Briyani Kambing",
+    "harga": 75000,
+    "gambar": "img/menu-img/nasi-briyani.jpg"
+  },
+  {
+    "nama": "Udang Galah Saus Mentega",
+    "harga": 98000,
+    "gambar": "img/menu-img/udang-galah.jpg"
+  },
+  {
+    "nama": "Foie Gras Panggang",
+    "harga": 150000,
+    "gambar": "img/menu-img/foie-gras.jpg"
+  },
+  {
+    "nama": "Sate Wagyu Truffle",
+    "harga": 125000,
+    "gambar": "img/menu-img/sate-wagyu-truffle.jpg"
+  },
+  {
+    "nama": "Iga Bakar Madu",
+    "harga": 95000,
+    "gambar": "img/menu-img/iga-bakar-madu.jpg"
+  },
+  {
+    "nama": "Tuna Tataki",
+    "harga": 87000,
+    "gambar": "img/menu-img/tuna-tataki.jpg"
+  }
+]

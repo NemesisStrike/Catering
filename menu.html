@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Daftar Menu | Serasa Catering</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fefefe;
+      margin: 0;
+      padding: 0;
+    }
+    .section-heading {
+      text-align: center;
+      margin: 40px 0 20px;
+    }
+    .menu-wrapper {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 15px;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .col-12, .col-sm-6, .col-md-4 {
+      flex: 1 1 calc(100% - 20px);
+    }
+    @media (min-width: 576px) {
+      .col-sm-6 {
+        flex: 1 1 calc(50% - 20px);
+      }
+    }
+    @media (min-width: 768px) {
+      .col-md-4 {
+        flex: 1 1 calc(33.333% - 20px);
+      }
+    }
+  </style>
+  <link rel="icon" href="img/logo/logo_serasa.png">
+  <link href="css/responsive/responsive.css" rel="stylesheet">
+</head>
+<body>
+    <header style="background-color: #fff; padding: 15px 30px; border-bottom: 1px solid #eee;">
+        <div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
+            <img src="img/logo/logo_serasa.png" alt="Logo Serasa Catering" style="height: 60px;">
+            <div style="text-align: left;">
+                <h2 style="margin: 0;">Daftar Menu</h2>
+                <p style="margin: 0;">Pilihan makanan terbaik dari Serasa Catering</p>
+            </div>
+        </div>
+    </header>
+    <div style="text-align: center; margin: 30px 0;">
+      <button onclick="downloadPDF()" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+        Download Menu (PDF)
+      </button>
+    </div>
+    <div style="text-align: center; margin: 20px 0;">
+        <input type="text" id="search-input" onkeyup="filterMenu()" placeholder="Cari menu..." style="padding: 10px; width: 80%; max-width: 400px; font-size: 16px;">
+    </div>
+
+    <section class="caviar-testimonials-area" id="testimonial">
+        <div class="row">
+            <div class="col-12 menu-heading">
+                <div class="section-heading text-center">
+                    <h2>Makanan</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="testimonials-content">
+                        <div class="row" id="makanan-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <section class="caviar-testimonials-area" id="testimonial">
+        <div class="row">
+            <div class="col-12 menu-heading">
+                <div class="section-heading text-center">
+                    <h2>Minuman</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="testimonials-content">
+                        <div class="row" id="minuman-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br><br>
+    <section class="caviar-testimonials-area" id="paket">
+      <div class="row">
+        <div class="col-12 menu-heading">
+          <div class="section-heading text-center">
+            <h2>Paket Menu</h2>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="testimonials-content">
+              <div class="row" id="paket-container"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <script>
+    fetch('data/makanan.json')
+    .then(response => response.json())
+    .then(data => {
+      const container = document.getElementById('makanan-container');
+      data.forEach((item, index) => {
+        const delay = 0.2 + (index * 0.1); // animasi delay
+        const menuHTML = `
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="caviar-single-dish wow fadeInUp" data-wow-delay="${delay}s">
+              <img src="${item.gambar}" alt="${item.nama}">
+              <div class="dish-info">
+                <h6 class="dish-name">${item.nama}</h6>
+                <p class="dish-price">Rp${item.harga.toLocaleString('id-ID')}</p>
+              </div>
+            </div>
+          </div>
+        `;
+        container.innerHTML += menuHTML;
+      });
+    })
+    .catch(error => console.error('Gagal memuat menu:', error));
+    fetch('data/minuman.json')
+    .then(response => response.json())
+    .then(data => {
+      const container = document.getElementById('minuman-container');
+      data.forEach((item, index) => {
+        const delay = 0.2 + (index * 0.1); // animasi delay
+        const menuHTML = `
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="caviar-single-dish wow fadeInUp" data-wow-delay="${delay}s">
+              <img src="${item.gambar}" alt="${item.nama}">
+              <div class="dish-info">
+                <h6 class="dish-name">${item.nama}</h6>
+                <p class="dish-price">Rp${item.harga.toLocaleString('id-ID')}</p>
+              </div>
+            </div>
+          </div>
+        `;
+        container.innerHTML += menuHTML;
+      });
+    })
+    .catch(error => console.error('Gagal memuat menu:', error));
+    fetch('data/paket.json')
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById('paket-container');
+    data.forEach((item, index) => {
+      const delay = 0.2 + (index * 0.1); // animasi delay
+      const menuHTML = `
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="caviar-single-dish wow fadeInUp" data-wow-delay="${delay}s">
+            <img src="${item.gambar}" alt="${item.nama}">
+            <div class="dish-info">
+              <h6 class="dish-name">${item.nama}</h6>
+              <p class="dish-price">Rp${item.harga.toLocaleString('id-ID')}</p>
+              <p class="dish-desc">${item.deskripsi}</p>
+            </div>
+          </div>
+        </div>
+      `;
+      container.innerHTML += menuHTML;
+    });
+  })
+  .catch(error => console.error('Gagal memuat paket:', error));
+  </script>
+  <script>
+  async function downloadPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    try {
+      const makananRes = await fetch('data/makanan.json');
+      const minumanRes = await fetch('data/minuman.json');
+      const paketRes = await fetch('data/paket.json');
+      const makanan = await makananRes.json();
+      const minuman = await minumanRes.json();
+      const paket = await paketRes.json();
+
+      doc.setFontSize(18);
+      doc.text("Menu Serasa Catering", 105, 15, { align: "center" });
+
+      // Section: Makanan
+      doc.setFontSize(14);
+      doc.text("Daftar Makanan", 15, 30);
+      const makananRows = makanan.map((item, i) => [i + 1, item.nama, `Rp${item.harga.toLocaleString('id-ID')}`]);
+
+      doc.autoTable({
+        startY: 35,
+        head: [["No", "Nama Makanan", "Harga"]],
+        body: makananRows,
+        styles: { halign: 'left' },
+        theme: 'grid',
+        headStyles: { fillColor: [200, 50, 50] },
+      });
+
+      let yAfterMakanan = doc.lastAutoTable.finalY + 15;
+
+      // Section: Minuman
+      doc.text("Daftar Minuman", 15, yAfterMakanan);
+      const minumanRows = minuman.map((item, i) => [i + 1, item.nama, `Rp${item.harga.toLocaleString('id-ID')}`]);
+
+      doc.autoTable({
+        startY: yAfterMakanan + 5,
+        head: [["No", "Nama Minuman", "Harga"]],
+        body: minumanRows,
+        styles: { halign: 'left' },
+        theme: 'grid',
+        headStyles: { fillColor: [50, 100, 200] },
+      });
+
+      let yAfterMinuman = doc.lastAutoTable.finalY + 15;
+
+      // Section: Paket
+      doc.text("Daftar Paket", 15, yAfterMinuman);
+      const paketRows = paket.map((item, i) => [i + 1, item.nama, `Rp${item.harga.toLocaleString('id-ID')}`]);
+
+      doc.autoTable({
+        startY: yAfterMinuman + 5,
+        head: [["No", "Nama Paket", "Harga"]],
+        body: paketRows,
+        styles: { halign: 'left' },
+        theme: 'grid',
+        headStyles: { fillColor: [0, 150, 90] },
+      });
+
+      doc.save("Menu_Serasa_Catering.pdf");
+    } catch (error) {
+      console.error("Gagal membuat PDF:", error);
+      alert("Gagal membuat PDF. Coba lagi.");
+    }
+  }
+</script>
+
+<script>
+  function filterMenu() {
+    const keyword = document.getElementById('search-input').value.toLowerCase();
+    const makananItems = document.querySelectorAll('#makanan-container .col-12');
+    const minumanItems = document.querySelectorAll('#minuman-container .col-12');
+
+    makananItems.forEach(item => {
+      const nama = item.querySelector('.dish-name')?.textContent.toLowerCase();
+      if (nama.includes(keyword)) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+
+    minumanItems.forEach(item => {
+      const nama = item.querySelector('.dish-name')?.textContent.toLowerCase();
+      if (nama.includes(keyword)) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

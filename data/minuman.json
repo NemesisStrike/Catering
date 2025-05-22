@@ -1,0 +1,47 @@
+[
+  {
+    "nama": "Es Teh",
+    "harga": 3000,
+    "gambar": "img/menu-img/es-teh.jpg"
+  },
+  {
+    "nama": "Jus Alpukat",
+    "harga": 8000,
+    "gambar": "img/menu-img/jus-alpukat.jpg"
+  },
+  {
+    "nama": "Strawberry Mojito",
+    "harga": 31000,
+    "gambar": "img/menu-img/strawberry-mojito.jpg"
+  },
+  {
+    "nama": "Kopi Arabika Cold Brew",
+    "harga": 22000,
+    "gambar": "img/menu-img/kopi-coldbrew.jpg"
+  },
+  {
+    "nama": "Matcha Latte",
+    "harga": 25000,
+    "gambar": "img/menu-img/matcha-latte.jpg"
+  },
+  {
+    "nama": "Jus Mangga Premium",
+    "harga": 18000,
+    "gambar": "img/menu-img/jus-mangga-premium.jpg"
+  },
+  {
+    "nama": "Red Velvet Milkshake",
+    "harga": 28000,
+    "gambar": "img/menu-img/red-velvet-milkshake.jpg"
+  },
+  {
+    "nama": "Es Kelapa Muda",
+    "harga": 15000,
+    "gambar": "img/menu-img/es-kelapa-muda.jpg"
+  },
+  {
+    "nama": "Infused Water Citrus Mint",
+    "harga": 20000,
+    "gambar": "img/menu-img/infused-citrus.jpg"
+  }
+]
